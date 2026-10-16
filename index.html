@@ -198,7 +198,6 @@ button{font-family:var(--sans);cursor:pointer}
     <div class="capa-menu" id="capa-menu">
       <button class="cbtn principal" id="c-jogar">Começar a investigação<small>Entre na cidade com o caderno de notas</small></button>
       <button class="cbtn" id="c-como">Como jogar<small>Os três territórios, as cartas e os controles</small></button>
-      <button class="cbtn" id="c-cred">Créditos</button>
       <button class="cbtn" id="c-som">Som: ligado</button>
     </div>
   </div>
@@ -237,17 +236,6 @@ button{font-family:var(--sans);cursor:pointer}
 </section>
 
 <!-- CRÉDITOS -->
-<section class="tela" id="t-cred">
-  <div class="painel">
-    <div class="topo"><div class="selo">Créditos</div><h1>Quem Desenha o Mapa</h1><div class="sub">Jogo de revisão para a A1</div></div>
-    <div class="corpo">
-      <p><b>Unidade curricular:</b> Geopolítica e Política Internacional, 2026.2.</p>
-      <p><b>Conteúdo e concepção:</b> Professor Paulo Lira.</p>
-      <p class="nota">Mundo 3D construído com a biblioteca Three.js (licença MIT). Música e efeitos gerados no próprio navegador. Nada é enviado a servidor algum: o jogo inteiro está neste arquivo.</p>
-      <div class="linhabt"><button class="btn" id="b-cred-ok">Voltar</button></div>
-    </div>
-  </div>
-</section>
 
 <!-- PAUSA -->
 <section class="tela" id="t-pausa">
@@ -1122,7 +1110,6 @@ function entrarMenu(){ var c=$('t-capa'); if(c.classList.contains('menu')) retur
 $('t-capa').addEventListener('click',function(e){ if(!e.target.closest('.cbtn')) entrarMenu(); });
 $('c-jogar').onclick=function(){ $('t-nome').classList.add('on'); setTimeout(function(){ $('nome').focus(); },200); };
 $('c-como').onclick=function(){ $('t-como').classList.add('on'); }; $('b-como-ok').onclick=function(){ $('t-como').classList.remove('on'); if(mode==='pause') $('t-pausa').classList.add('on'); };
-$('c-cred').onclick=function(){ $('t-cred').classList.add('on'); }; $('b-cred-ok').onclick=function(){ $('t-cred').classList.remove('on'); };
 $('c-som').onclick=function(){ SOM.iniciar(); var on=SOM.alternar(); $('c-som').textContent='Som: '+(on?'ligado':'desligado'); };
 $('b-voltar').onclick=function(){ $('t-nome').classList.remove('on'); };
 $('nome').addEventListener('keydown',function(e){ if(e.key==='Enter') $('b-comecar').click(); });
